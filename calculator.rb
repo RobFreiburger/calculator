@@ -51,6 +51,9 @@ class CalculatorEngine
               puts "\t#{position}: #{m}"
               position = position + 1
             end
+          when 'pi'
+            @memory.push(3.14)
+            puts @memory.last
           when '+'
             if @memory.length >= 2
               op1 = @memory.pop
