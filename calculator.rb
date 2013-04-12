@@ -47,6 +47,32 @@ class CalculatorEngine
             else
               puts "Error: Not Enough Operands"
             end
+          when '-'
+            if @memory.length >= 2
+              op1 = @memory.pop
+              op2 = @memory.pop
+              @memory.push(op1 - op2)
+              puts "= #{@memory.last}"
+            else
+              puts "Error: Not Enough Operands"
+            end
+          when '*'
+            if @memory.length >= 2
+              op1 = @memory.pop
+              op2 = @memory.pop
+              @memory.push(op1 * op2)
+              puts "= #{@memory.last}"
+            else
+              puts "Error: Not Enough Operands"
+            end
+          when '/'
+            if @memory.length >= 2
+              op1 = @memory.pop
+              op2 = @memory.pop
+              @memory.push(op1 / op2)
+              puts "= #{@memory.last}"
+            else
+              puts "Error: Not Enough Operands"
           else
             puts "Error: Unsupported Operator: #{input}" unless input.empty?
           end
