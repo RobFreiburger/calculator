@@ -6,6 +6,7 @@ class CalculatorEngine
 
   def initialize
     @memory = []  
+    @history = []
   end
 
 
@@ -18,6 +19,7 @@ class CalculatorEngine
       
       if input
         input = input.chomp
+        @history.push(input)
 
         if input == 'q'
           done = true
@@ -35,6 +37,13 @@ class CalculatorEngine
             puts "Memory:"
             position = 0
             @memory.each do |m|
+              puts "\t#{position}: #{m}"
+              position = position + 1
+            end
+          when 'p'
+            puts "Paper Tape:"
+            position = 0
+            @history.each do |m|
               puts "\t#{position}: #{m}"
               position = position + 1
             end
