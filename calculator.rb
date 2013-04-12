@@ -33,6 +33,10 @@ class CalculatorEngine
           when 'c'
             @memory = []
             puts "Memory Cleared"
+          when 'ca'
+            @memory = []
+            @history = []
+            puts "Memory and History Cleared"
           when 'm'
             puts "Memory:"
             position = 0
