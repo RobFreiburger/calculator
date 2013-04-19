@@ -89,6 +89,7 @@ class CalculatorEngine
               puts "= #{@memory.last}"
             else
               puts "Error: Not Enough Operands"
+            end
           else
             puts "Error: Unsupported Operator: #{input}" unless input.empty?
           end
