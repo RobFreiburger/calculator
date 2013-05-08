@@ -51,9 +51,9 @@ class CalculatorEngine
             @memory.push(3.14)
             puts @memory.last
           when 'sqrt'
-            if @memory.length >= 2
+            if @memory.length >= 1
               num = @memory.pop
-              @memory.push(num * num)
+              @memory.push(Math.sqrt(num))
               puts "= #{@memory.last}"
             else
               puts "Error: Not Enough Operands"
