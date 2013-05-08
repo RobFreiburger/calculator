@@ -54,6 +54,14 @@ class CalculatorEngine
           when 'pi'
             @memory.push(3.14)
             puts @memory.last
+          when 'sqrt'
+            if @memory.length >= 2
+              num = @memory.pop
+              @memory.push(num * num)
+              puts "= #{@memory.last}"
+            else
+              puts "Error: Not Enough Operands"
+            end
           when '+'
             if @memory.length >= 2
               op1 = @memory.pop
