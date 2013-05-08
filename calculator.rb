@@ -26,10 +26,6 @@ class CalculatorEngine
         else
           # operators will work on the stack, numbers will be added to stack
           case input
-          when '0','1','2','3','4','5','6','7','8','9'    
-          	# ['0','1'].include?, %w(0 1).include?
-            @memory.push(input.to_f)
-            puts @memory.last
           when 'c'
             @memory = []
             puts "Memory Cleared"
@@ -98,8 +94,17 @@ class CalculatorEngine
             else
               puts "Error: Not Enough Operands"
             end
+          when '0','1','2','3','4','5','6','7','8','9'    
+            # ['0','1'].include?, %w(0 1).include?
+            @memory.push(input.to_f)
+            puts @memory.last
           else
-            puts "Error: Unsupported Operator: #{input}" unless input.empty?
+            if input =~ /^\d+\.\d*$/
+              @memory.push(input.to_f)
+              puts @memory.last
+            else
+              puts "Error: Unsupported Operator: #{input}" unless input.empty?
+            end
           end
 
         end
